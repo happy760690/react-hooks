@@ -10,6 +10,7 @@ const DogShow = () => {
     }
 
     useEffect(() => {
+        console.log('dogshow useEffect')
         setLoading(true)
         axios.get('https://dog.ceo/api/breeds/image/random').then((response) => {
             console.log(response);

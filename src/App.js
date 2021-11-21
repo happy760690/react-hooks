@@ -3,8 +3,9 @@ import './App.css';
 import LikeButton from './component/LikeButton';
 // import MouseTracker from './component/MouseTracker';
 import DogShow from './component/DogShow'
-import useMousePostion from './hooks/useMousePosition'
+// import useMousePostion from './hooks/useMousePosition'
 import useUrlLoader from './hooks/useUrlLoader';
+import { useEffect } from 'react'
 
 
 const DogShowWidthHook = () => {
@@ -23,15 +24,19 @@ const DogShowWidthHook = () => {
 
 function App() {
 
-  const positions = useMousePostion();
+  // const positions = useMousePostion();
+
+  useEffect(() => {  // 第一次渲染后和每次dom更新后调用
+    console.log('app useEffect')
+})
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>{positions.x}</h1>
+        {/* <h1>{positions.x}</h1> */}
         <DogShowWidthHook />
-        {/* <DogShow /> */}
+        <DogShow />
         {/* <MouseTracker /> */}
         <LikeButton />
         <a

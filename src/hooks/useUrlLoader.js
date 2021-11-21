@@ -1,12 +1,12 @@
-import React, {useState, useEffect } from 'react'
+import  {useState, useEffect } from 'react'
 import axios from 'axios'
 
 const useUrlLoader = (url) => {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(false)
-    const style = {
-        width: 200
-    }
+    // const style = {
+    //     width: 200
+    // }
 
     useEffect(() => {
         setLoading(true)
